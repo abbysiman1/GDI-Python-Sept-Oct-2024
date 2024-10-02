@@ -9,7 +9,7 @@ correct_number = 13
 # Get the user's guess
 guess = int(input("Guess a number:"))
 # Keep asking the user for a guess until they get it right
-while guess!=correct_number:
+while guess != correct_number:
     if guess > 13:
         print("Try again! Go lower")
     else:
@@ -22,11 +22,13 @@ print("You guessed it!")
 # PROBLEM #2: Counting to 10
 # -----------------------------------
 # Goal: Write a program that counts from 1 to 10 and prints each number.
-
+counter = 0
 # Initialize a counter variable
 
 # While the counter is less than or equal to 10, repeat the loop
-
+while counter < 10:
+    print(counter+1)
+    counter += 1
 
 
 # -----------------------------------
@@ -37,10 +39,17 @@ print("You guessed it!")
 
 # Initialize an empty list to store the numbers
 
-
+list = []
 # Initialize the first number
-
+number = int(input("Please enter a positive number: "))
 # Keep asking for numbers and add them to the list until the user enters a negative number
+while number > 0:
+    list.append(number)
+    number = int(input("Please enter a positive number: "))
+
+total = sum(list)
+
+print(total)
 
 
 # Calculate the total sum of the numbers in the list
@@ -57,8 +66,13 @@ print("You guessed it!")
 # and prints "Blast off!" when it reaches 0.
 
 # Initialize the countdown number
-
+number = 10
 # Create a while loop that continues as long as countdown is greater than or equal to 0
+while number >= 0:
+    print(number)
+    number -= 1
+
+print("Blast off!")
 
 
 # After the loop finishes, print "Blast off!"
@@ -73,8 +87,22 @@ print("You guessed it!")
 # If they don't guess correctly after 5 attempts, print "Out of attempts!"
 
 # Initialize the correct number and the number of attempts
-
+number = 15
+counter = 1
+num_attempts = 5
 # Get the user's first guess
+guess = int(input("Guess a number:"))
+while counter < num_attempts:
+    if guess == number:
+        print("You guessed it!")
+    elif counter < num_attempts:
+        guess = int(input("Guess a number:"))
+        counter += 1
+
+if guess != number:
+    print("Out of attempts!")
+
+
 
 
 # Loop while the user hasn't guessed the correct number and still has attempts left
