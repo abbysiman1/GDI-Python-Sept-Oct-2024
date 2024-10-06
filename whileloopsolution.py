@@ -29,14 +29,10 @@ counter = 0
 while counter < 10:
     print(counter+1)
     counter += 1
-
-
 # -----------------------------------
 # PROBLEM #3: Storing Positive Numbers
 # -----------------------------------
 # Goal: Write a program that keeps asking the user for a number and adds it to a list. The loop stops when the user enters a negative number. At the end, print the total sum of the positive numbers and also print the list of numbers entered.
-
-
 # Initialize an empty list to store the numbers
 
 list = []
@@ -46,18 +42,10 @@ number = int(input("Please enter a positive number: "))
 while number > 0:
     list.append(number)
     number = int(input("Please enter a positive number: "))
-
 total = sum(list)
-
 print(total)
-
-
 # Calculate the total sum of the numbers in the list
-
-
 # Print the list of numbers and the total sum
-
-
 
 # -----------------------------------
 # PROBLEM #3: Countdown Timer
@@ -71,13 +59,8 @@ number = 10
 while number >= 0:
     print(number)
     number -= 1
-
 print("Blast off!")
-
-
 # After the loop finishes, print "Blast off!"
-
-
 
 # -----------------------------------
 # PROBLEM #4 SPICY CHALLENGE: Number Guessing with a Limit
@@ -88,24 +71,19 @@ print("Blast off!")
 
 # Initialize the correct number and the number of attempts
 number = 15
-counter = 1
+counter = 0
 num_attempts = 5
-# Get the user's first guess
-guess = int(input("Guess a number:"))
-while counter < num_attempts:
-    if guess == number:
-        print("You guessed it!")
-    elif counter < num_attempts:
-        guess = int(input("Guess a number:"))
-        counter += 1
-
-if guess != number:
-    print("Out of attempts!")
-
-
-
 
 # Loop while the user hasn't guessed the correct number and still has attempts left
-
-
 # After the loop, check if they guessed correctly or ran out of attempts
+while counter < num_attempts:
+    guess = int(input("Enter your guess: "))
+    counter += 1  # Increment the attempt counter
+    if guess == correct_number:
+        print("You guessed it!")
+        break  # Exit the loop if the guess is correct
+    else:
+        print("Try again!")
+
+if counter == num_attempts:
+    print("Out of attempts!")
